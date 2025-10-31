@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hubspot Connector</title>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://connectors.tableau.com/libs/tableauwdc-2.2.latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.2/js.cookie.min.js"></script>
+    <script src="./hubspot.js"></script> -->
+
+    <style>
+        body {
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #e4ecf5);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-box {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .container-box:hover {
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        input.form-control {
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            transition: border-color 0.3s;
+        }
+
+        input.form-control:focus {
+            border-color: #337ab7;
+            box-shadow: 0 0 6px rgba(51,122,183,0.3);
+        }
+
+        button.btn {
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 12px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button.btn:hover {
+            transform: scale(1.02);
+        }
+
+        .checkbox-group {
+            text-align: left;
+            margin: 15px 0;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .signedin p {
+            margin-top: 10px;
+            font-weight: 500;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+  <div class="container-box">
+
+      <!-- Signed in section -->
+      <form action="/endpoints" method="post">
+          <h2>Welcome!</h2>
+          <p>Select the endpoints you want to load:</p>
+
+          <div class="checkbox-group">
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/contacts"> Contacts</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/companies"> Companies</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/deals"> Deals</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/line_items"> Line Items</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/owners"> Owners</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/tickets"> Tickets</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/products"> Products</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/discounts"> Discounts</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/subscriptions"> Subscriptions</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/commerce_payments"> Payments</label>
+              <label><input type="checkbox" name="endpoints" value="crm/v3/objects/carts"> Carts</label>
+              <label><input type="checkbox" name="endpoints" value="crm/v3/objects/invoices"> Invoices</label>
+              <label><input type="checkbox" name="endpoints" value="engagements/v1/engagements/paged"> Engagements</label>
+              <label><input type="checkbox" name="endpoints" value="email/public/v1/events"> Events</label>
+              <label><input type="checkbox" name="endpoints" value="/crm/v3/objects/orders"> Orders</label>
+          </div>
+
+          <button class="btn btn-success btn-block" id="getdatabutton" type="submit">Load Selected Endpoints</button>
+      </form>
+
+  </div>
+</body>
+</html>

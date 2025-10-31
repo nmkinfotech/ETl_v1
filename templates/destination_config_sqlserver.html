@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configure SQL Server</title>
+  <style>
+
+    .etl-form {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+  margin: 50px auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.etl-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #222;
+}
+
+.etl-form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+.etl-form input,
+.etl-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.etl-form input:focus,
+.etl-form select:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 0 3px rgba(0, 120, 215, 0.15);
+}
+
+.etl-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #28a745;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.etl-form button:hover {
+  background: #218838;
+}
+
+.etl-form button:active {
+  transform: scale(0.98);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <form method="post" class="etl-form">
+    <input type="hidden" name="api_key" value="{{api_key}}">
+    <input type="hidden" name="board_id" value="{{board_id}}">
+
+    <h2>Configure SQL Server</h2>
+
+    <label>Driver Number:</label>
+    <input type="text" name="driver_number" required placeholder="eg:17 for {ODBC Driver 17 for SQL Server}">
+
+    <label>Server:</label>
+    <input type="text" name="server" required>
+
+    <label>Database:</label>
+    <input type="text" name="database" required>
+
+    <label>Username:</label>
+    <input type="text" name="username" placeholder="Optional">
+
+    <label>Password:</label>
+    <input type="password" name="password" placeholder="Optional">
+
+    <label>Table Name:</label>
+    <input type="text" name="table_name" required>
+
+    <label>Load Mode:</label>
+    <select name="load_mode" required>
+      <option value="full">Full Reload</option>
+      <option value="append">Append New Rows</option>
+    </select>
+
+    <button type="submit">Run ETL</button>
+  </form>
+
+
+
+  </div>
+</body>
+</html>

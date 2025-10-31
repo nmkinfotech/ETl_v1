@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Select Source</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 0.8rem 0;
+    }
+
+    a {
+      display: block;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    a:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    a:disabled, 
+    a[href="#"] {
+      background: #d6d6d6;
+      color: #777;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Select Source</h2>
+    <ul>
+      <li><a href="/config/monday">Monday.com</a></li>
+      <li><a href="/config/hubspot">HubSpot</a></li>
+      <li><a href="#">Facebook Ads (coming soon)</a></li>
+    </ul>
+  </div>
+</body>
+</html>
